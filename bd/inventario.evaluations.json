@@ -1,0 +1,728 @@
+[{
+  "_id": {
+    "$oid": "69ed7540242b399c8401ee6d"
+  },
+  "student": {
+    "$oid": "69ed753f242b399c8401ecf7"
+  },
+  "clinic": {
+    "$oid": "69ed753f242b399c8401eced"
+  },
+  "date": {
+    "$date": "2026-04-20T18:00:00.000Z"
+  },
+  "performance": 88,
+  "presentation": 63,
+  "workbookActivities": 9,
+  "trainingHours": 17,
+  "attendance": 88,
+  "workbook": 60,
+  "constantTraining": 66,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-04-26T02:15:28.694Z"
+  },
+  "updatedAt": {
+    "$date": "2026-04-26T02:15:28.694Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69ed7540242b399c8401ee6e"
+  },
+  "student": {
+    "$oid": "69ed753f242b399c8401ecf8"
+  },
+  "clinic": {
+    "$oid": "69ed753f242b399c8401eced"
+  },
+  "date": {
+    "$date": "2026-04-05T18:00:00.000Z"
+  },
+  "performance": 68,
+  "presentation": 67,
+  "workbookActivities": 5,
+  "trainingHours": 10,
+  "attendance": 61,
+  "workbook": 90,
+  "constantTraining": 68,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-04-26T02:15:28.694Z"
+  },
+  "updatedAt": {
+    "$date": "2026-04-26T02:15:28.694Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69ed7540242b399c8401ee6f"
+  },
+  "student": {
+    "$oid": "69ed753f242b399c8401ecf8"
+  },
+  "clinic": {
+    "$oid": "69ed753f242b399c8401eced"
+  },
+  "date": {
+    "$date": "2026-04-19T18:00:00.000Z"
+  },
+  "performance": 83,
+  "presentation": 93,
+  "workbookActivities": 14,
+  "trainingHours": 12,
+  "attendance": 61,
+  "workbook": 100,
+  "constantTraining": 32,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-04-26T02:15:28.694Z"
+  },
+  "updatedAt": {
+    "$date": "2026-04-26T02:15:28.694Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69ed7540242b399c8401ee70"
+  },
+  "student": {
+    "$oid": "69ed753f242b399c8401ecf9"
+  },
+  "clinic": {
+    "$oid": "69ed753f242b399c8401eced"
+  },
+  "date": {
+    "$date": "2026-04-02T18:00:00.000Z"
+  },
+  "performance": 81,
+  "presentation": 69,
+  "workbookActivities": 9,
+  "trainingHours": 10,
+  "attendance": 67,
+  "workbook": 100,
+  "constantTraining": 54,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-04-26T02:15:28.694Z"
+  },
+  "updatedAt": {
+    "$date": "2026-04-26T02:15:28.694Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69ed7540242b399c8401ee71"
+  },
+  "student": {
+    "$oid": "69ed753f242b399c8401ecf9"
+  },
+  "clinic": {
+    "$oid": "69ed753f242b399c8401eced"
+  },
+  "date": {
+    "$date": "2026-04-11T18:00:00.000Z"
+  },
+  "performance": 64,
+  "presentation": 61,
+  "workbookActivities": 9,
+  "trainingHours": 20,
+  "attendance": 67,
+  "workbook": 60,
+  "constantTraining": 58,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-04-26T02:15:28.694Z"
+  },
+  "updatedAt": {
+    "$date": "2026-04-26T02:15:28.694Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69ed7540242b399c8401ee72"
+  },
+  "student": {
+    "$oid": "69ed753f242b399c8401ecf9"
+  },
+  "clinic": {
+    "$oid": "69ed753f242b399c8401eced"
+  },
+  "date": {
+    "$date": "2026-04-13T18:00:00.000Z"
+  },
+  "performance": 71,
+  "presentation": 79,
+  "workbookActivities": 10,
+  "trainingHours": 29,
+  "attendance": 67,
+  "workbook": 70,
+  "constantTraining": 52,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-04-26T02:15:28.694Z"
+  },
+  "updatedAt": {
+    "$date": "2026-04-26T02:15:28.694Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69ed7540242b399c8401ee73"
+  },
+  "student": {
+    "$oid": "69ed753f242b399c8401ecfa"
+  },
+  "clinic": {
+    "$oid": "69ed753f242b399c8401eced"
+  },
+  "date": {
+    "$date": "2026-04-09T18:00:00.000Z"
+  },
+  "performance": 98,
+  "presentation": 74,
+  "workbookActivities": 7,
+  "trainingHours": 37,
+  "attendance": 68,
+  "workbook": 90,
+  "constantTraining": 38,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-04-26T02:15:28.694Z"
+  },
+  "updatedAt": {
+    "$date": "2026-04-26T02:15:28.694Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69ed7540242b399c8401ee74"
+  },
+  "student": {
+    "$oid": "69ed753f242b399c8401ecfa"
+  },
+  "clinic": {
+    "$oid": "69ed753f242b399c8401eced"
+  },
+  "date": {
+    "$date": "2026-04-07T18:00:00.000Z"
+  },
+  "performance": 72,
+  "presentation": 75,
+  "workbookActivities": 10,
+  "trainingHours": 12,
+  "attendance": 68,
+  "workbook": 70,
+  "constantTraining": 46,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-04-26T02:15:28.694Z"
+  },
+  "updatedAt": {
+    "$date": "2026-04-26T02:15:28.694Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69ed7540242b399c8401ee75"
+  },
+  "student": {
+    "$oid": "69ed753f242b399c8401ecfb"
+  },
+  "clinic": {
+    "$oid": "69ed753f242b399c8401ecf1"
+  },
+  "date": {
+    "$date": "2026-04-22T18:00:00.000Z"
+  },
+  "performance": 62,
+  "presentation": 96,
+  "workbookActivities": 12,
+  "trainingHours": 21,
+  "attendance": 89,
+  "workbook": 100,
+  "constantTraining": 20,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-04-26T02:15:28.694Z"
+  },
+  "updatedAt": {
+    "$date": "2026-04-26T02:15:28.694Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69ed7540242b399c8401ee76"
+  },
+  "student": {
+    "$oid": "69ed753f242b399c8401ecfc"
+  },
+  "clinic": {
+    "$oid": "69ed753f242b399c8401ecf1"
+  },
+  "date": {
+    "$date": "2026-04-07T18:00:00.000Z"
+  },
+  "performance": 64,
+  "presentation": 80,
+  "workbookActivities": 7,
+  "trainingHours": 29,
+  "attendance": 97,
+  "workbook": 60,
+  "constantTraining": 68,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-04-26T02:15:28.694Z"
+  },
+  "updatedAt": {
+    "$date": "2026-04-26T02:15:28.694Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69ed7540242b399c8401ee77"
+  },
+  "student": {
+    "$oid": "69ed753f242b399c8401ecfd"
+  },
+  "clinic": {
+    "$oid": "69ed753f242b399c8401ecf1"
+  },
+  "date": {
+    "$date": "2026-04-12T18:00:00.000Z"
+  },
+  "performance": 75,
+  "presentation": 68,
+  "workbookActivities": 10,
+  "trainingHours": 36,
+  "attendance": 93,
+  "workbook": 100,
+  "constantTraining": 52,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-04-26T02:15:28.694Z"
+  },
+  "updatedAt": {
+    "$date": "2026-04-26T02:15:28.694Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69ed7540242b399c8401ee78"
+  },
+  "student": {
+    "$oid": "69ed753f242b399c8401ecfe"
+  },
+  "clinic": {
+    "$oid": "69ed753f242b399c8401ecf1"
+  },
+  "date": {
+    "$date": "2026-04-06T18:00:00.000Z"
+  },
+  "performance": 63,
+  "presentation": 78,
+  "workbookActivities": 11,
+  "trainingHours": 13,
+  "attendance": 90,
+  "workbook": 60,
+  "constantTraining": 48,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-04-26T02:15:28.694Z"
+  },
+  "updatedAt": {
+    "$date": "2026-04-26T02:15:28.694Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69ed7540242b399c8401ee79"
+  },
+  "student": {
+    "$oid": "69ed753f242b399c8401ecfe"
+  },
+  "clinic": {
+    "$oid": "69ed753f242b399c8401ecf1"
+  },
+  "date": {
+    "$date": "2026-04-09T18:00:00.000Z"
+  },
+  "performance": 64,
+  "presentation": 70,
+  "workbookActivities": 6,
+  "trainingHours": 29,
+  "attendance": 90,
+  "workbook": 100,
+  "constantTraining": 52,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-04-26T02:15:28.694Z"
+  },
+  "updatedAt": {
+    "$date": "2026-04-26T02:15:28.694Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69ed7540242b399c8401ee7a"
+  },
+  "student": {
+    "$oid": "69ed753f242b399c8401ecfe"
+  },
+  "clinic": {
+    "$oid": "69ed753f242b399c8401ecf1"
+  },
+  "date": {
+    "$date": "2026-04-24T18:00:00.000Z"
+  },
+  "performance": 60,
+  "presentation": 79,
+  "workbookActivities": 7,
+  "trainingHours": 12,
+  "attendance": 90,
+  "workbook": 100,
+  "constantTraining": 72,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-04-26T02:15:28.694Z"
+  },
+  "updatedAt": {
+    "$date": "2026-04-26T02:15:28.694Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69ed7540242b399c8401ee7b"
+  },
+  "student": {
+    "$oid": "69ed753f242b399c8401ecff"
+  },
+  "clinic": {
+    "$oid": "69ed753f242b399c8401ecf4"
+  },
+  "date": {
+    "$date": "2026-04-01T18:00:00.000Z"
+  },
+  "performance": 62,
+  "presentation": 63,
+  "workbookActivities": 11,
+  "trainingHours": 25,
+  "attendance": 69,
+  "workbook": 100,
+  "constantTraining": 64,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-04-26T02:15:28.694Z"
+  },
+  "updatedAt": {
+    "$date": "2026-04-26T02:15:28.694Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69ed7540242b399c8401ee7c"
+  },
+  "student": {
+    "$oid": "69ed753f242b399c8401ecff"
+  },
+  "clinic": {
+    "$oid": "69ed753f242b399c8401ecf4"
+  },
+  "date": {
+    "$date": "2026-04-20T18:00:00.000Z"
+  },
+  "performance": 60,
+  "presentation": 84,
+  "workbookActivities": 8,
+  "trainingHours": 34,
+  "attendance": 69,
+  "workbook": 60,
+  "constantTraining": 66,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-04-26T02:15:28.694Z"
+  },
+  "updatedAt": {
+    "$date": "2026-04-26T02:15:28.694Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69ed7540242b399c8401ee7d"
+  },
+  "student": {
+    "$oid": "69ed753f242b399c8401ed00"
+  },
+  "clinic": {
+    "$oid": "69ed753f242b399c8401ecf4"
+  },
+  "date": {
+    "$date": "2026-04-18T18:00:00.000Z"
+  },
+  "performance": 83,
+  "presentation": 79,
+  "workbookActivities": 8,
+  "trainingHours": 12,
+  "attendance": 93,
+  "workbook": 80,
+  "constantTraining": 50,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-04-26T02:15:28.694Z"
+  },
+  "updatedAt": {
+    "$date": "2026-04-26T02:15:28.694Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69ed7540242b399c8401ee7e"
+  },
+  "student": {
+    "$oid": "69ed753f242b399c8401ed00"
+  },
+  "clinic": {
+    "$oid": "69ed753f242b399c8401ecf4"
+  },
+  "date": {
+    "$date": "2026-03-27T18:00:00.000Z"
+  },
+  "performance": 69,
+  "presentation": 90,
+  "workbookActivities": 5,
+  "trainingHours": 28,
+  "attendance": 93,
+  "workbook": 100,
+  "constantTraining": 62,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-04-26T02:15:28.694Z"
+  },
+  "updatedAt": {
+    "$date": "2026-04-26T02:15:28.694Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69ed7540242b399c8401ee7f"
+  },
+  "student": {
+    "$oid": "69ed753f242b399c8401ed00"
+  },
+  "clinic": {
+    "$oid": "69ed753f242b399c8401ecf4"
+  },
+  "date": {
+    "$date": "2026-04-06T18:00:00.000Z"
+  },
+  "performance": 98,
+  "presentation": 93,
+  "workbookActivities": 11,
+  "trainingHours": 16,
+  "attendance": 93,
+  "workbook": 80,
+  "constantTraining": 66,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-04-26T02:15:28.694Z"
+  },
+  "updatedAt": {
+    "$date": "2026-04-26T02:15:28.694Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69ed7540242b399c8401ee80"
+  },
+  "student": {
+    "$oid": "69ed753f242b399c8401ed01"
+  },
+  "clinic": {
+    "$oid": "69ed753f242b399c8401ecf4"
+  },
+  "date": {
+    "$date": "2026-04-09T18:00:00.000Z"
+  },
+  "performance": 69,
+  "presentation": 73,
+  "workbookActivities": 11,
+  "trainingHours": 32,
+  "attendance": 97,
+  "workbook": 80,
+  "constantTraining": 26,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-04-26T02:15:28.695Z"
+  },
+  "updatedAt": {
+    "$date": "2026-04-26T02:15:28.695Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69ed7540242b399c8401ee81"
+  },
+  "student": {
+    "$oid": "69ed753f242b399c8401ed01"
+  },
+  "clinic": {
+    "$oid": "69ed753f242b399c8401ecf4"
+  },
+  "date": {
+    "$date": "2026-04-20T18:00:00.000Z"
+  },
+  "performance": 61,
+  "presentation": 89,
+  "workbookActivities": 9,
+  "trainingHours": 24,
+  "attendance": 97,
+  "workbook": 90,
+  "constantTraining": 36,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-04-26T02:15:28.695Z"
+  },
+  "updatedAt": {
+    "$date": "2026-04-26T02:15:28.695Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69ed7540242b399c8401ee82"
+  },
+  "student": {
+    "$oid": "69ed753f242b399c8401ed02"
+  },
+  "clinic": {
+    "$oid": "69ed753f242b399c8401ecf4"
+  },
+  "date": {
+    "$date": "2026-03-27T18:00:00.000Z"
+  },
+  "performance": 79,
+  "presentation": 70,
+  "workbookActivities": 13,
+  "trainingHours": 18,
+  "attendance": 90,
+  "workbook": 90,
+  "constantTraining": 26,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-04-26T02:15:28.695Z"
+  },
+  "updatedAt": {
+    "$date": "2026-04-26T02:15:28.695Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69ed8e15adbcc4038595c9fe"
+  },
+  "student": {
+    "$oid": "69ed8de5adbcc4038595c9e7"
+  },
+  "clinic": {
+    "$oid": "69ed787dbf19981b0dd2cd87"
+  },
+  "performance": 90,
+  "presentation": 80,
+  "workbookActivities": 23,
+  "trainingHours": 28,
+  "attendance": 0,
+  "workbook": 88.55,
+  "constantTraining": 93.24000000000001,
+  "date": {
+    "$date": "2026-04-25T18:00:00.000Z"
+  },
+  "createdAt": {
+    "$date": "2026-04-26T04:01:25.397Z"
+  },
+  "updatedAt": {
+    "$date": "2026-04-26T04:01:25.397Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69f00668546d04a7f99bee93"
+  },
+  "student": {
+    "$oid": "69ed8936adbcc4038595c7f5"
+  },
+  "clinic": {
+    "$oid": "69ed787dbf19981b0dd2cd87"
+  },
+  "performance": 100,
+  "presentation": 100,
+  "workbookActivities": 25,
+  "trainingHours": 28,
+  "attendance": 0,
+  "workbook": 96.25,
+  "constantTraining": 93.24000000000001,
+  "date": {
+    "$date": "2026-04-27T18:00:00.000Z"
+  },
+  "createdAt": {
+    "$date": "2026-04-28T00:59:20.176Z"
+  },
+  "updatedAt": {
+    "$date": "2026-04-28T00:59:20.176Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69f00685546d04a7f99beeaf"
+  },
+  "student": {
+    "$oid": "69ed8936adbcc4038595c7f5"
+  },
+  "clinic": {
+    "$oid": "69ed787dbf19981b0dd2cd87"
+  },
+  "performance": 0,
+  "presentation": 0,
+  "workbookActivities": 0,
+  "trainingHours": 0,
+  "attendance": 0,
+  "workbook": 0,
+  "constantTraining": 0,
+  "date": {
+    "$date": "2026-04-27T18:00:00.000Z"
+  },
+  "createdAt": {
+    "$date": "2026-04-28T00:59:49.135Z"
+  },
+  "updatedAt": {
+    "$date": "2026-04-28T00:59:49.135Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69f00e5aeea791220d2e41a1"
+  },
+  "student": {
+    "$oid": "69f00bb8eea791220d2e40fc"
+  },
+  "clinic": {
+    "$oid": "69f00b95eea791220d2e40e7"
+  },
+  "performance": 90,
+  "presentation": 80,
+  "workbookActivities": 35,
+  "trainingHours": 45,
+  "attendance": 0,
+  "workbook": 89.60000000000001,
+  "constantTraining": 81.9,
+  "date": {
+    "$date": "2026-04-27T18:00:00.000Z"
+  },
+  "createdAt": {
+    "$date": "2026-04-28T01:33:14.042Z"
+  },
+  "updatedAt": {
+    "$date": "2026-04-28T01:33:14.042Z"
+  },
+  "__v": 0
+}]

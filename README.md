@@ -222,6 +222,74 @@ npm start
 - `PORT`: Puerto del servidor backend
 - `REACT_APP_API_URL`: URL de la API para el frontend
 
+## Despliegue en Producción
+
+### Frontend (Vercel)
+
+El frontend está configurado para desplegarse en Vercel:
+
+1. **Preparar el proyecto:**
+   - El archivo `vercel.json` ya está configurado
+   - El script `vercel-build` está en `package.json`
+   - El build de producción funciona correctamente
+
+2. **Desplegar en Vercel:**
+   ```bash
+   # Instalar Vercel CLI
+   npm install -g vercel
+
+   # Desplegar
+   vercel
+   ```
+
+   O conecta tu repositorio de GitHub a Vercel desde el dashboard.
+
+3. **Configurar variables de entorno en Vercel:**
+   - `REACT_APP_API_URL`: URL de tu backend desplegado (ej: https://tu-backend.onrender.com)
+
+### Backend (Render/Railway)
+
+El backend Node.js/Express necesita un servicio de hosting separado:
+
+**Opción 1: Render**
+1. Crea una cuenta en [render.com](https://render.com)
+2. Conecta tu repositorio de GitHub
+3. Crea un nuevo "Web Service"
+4. Configura:
+   - Build Command: `cd server && npm install`
+   - Start Command: `cd server && npm start`
+5. Agrega variables de entorno:
+   - `MONGODB_URI`: Tu conexión a MongoDB Atlas
+   - `JWT_SECRET`: Una clave secreta segura
+   - `PORT`: 5000
+
+**Opción 2: Railway**
+1. Crea una cuenta en [railway.app](https://railway.app)
+2. Importa tu repositorio de GitHub
+3. Configura las variables de entorno
+4. Railway detectará automáticamente Node.js y configurará el despliegue
+
+### Variables de Entorno Necesarias
+
+**Backend (.env):**
+```env
+MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/gestion_alumnos
+JWT_SECRET=tu_clave_secreta_muy_segura_aqui
+PORT=5000
+```
+
+**Frontend (.env):**
+```env
+REACT_APP_API_URL=https://tu-backend-url.com
+```
+
+### Notas Importantes
+
+- **Base de datos:** MongoDB Atlas es recomendado para producción
+- **Seguridad:** Usa contraseñas fuertes y JWT_SECRET seguro
+- **CORS:** Configura los oríenes permitidos en producción
+- **HTTPS:** Ambos servicios deberían usar HTTPS en producción
+
 ## Contribución
 
 1. Fork del proyecto

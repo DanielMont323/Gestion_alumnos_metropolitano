@@ -1,0 +1,858 @@
+[{
+  "_id": {
+    "$oid": "69ed753f242b399c8401ecf7"
+  },
+  "name": "María Fernanda López",
+  "clinic": {
+    "$oid": "69ed753f242b399c8401eced"
+  },
+  "group": "Lunes a Miércoles",
+  "startDate": {
+    "$date": "2026-04-17T18:00:00.000Z"
+  },
+  "notes": "Estudiante 1",
+  "attendancePercentage": 88,
+  "performance": 81,
+  "presentation": 84,
+  "workbookProgress": 67,
+  "trainingHours": 47,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-04-26T02:15:27.381Z"
+  },
+  "updatedAt": {
+    "$date": "2026-04-26T02:15:27.381Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69ed753f242b399c8401ecf8"
+  },
+  "name": "Juan Carlos Martínez",
+  "clinic": {
+    "$oid": "69ed753f242b399c8401eced"
+  },
+  "group": "Lunes a Jueves",
+  "startDate": {
+    "$date": "2026-03-31T18:00:00.000Z"
+  },
+  "notes": "Estudiante 2",
+  "attendancePercentage": 61,
+  "performance": 97,
+  "presentation": 67,
+  "workbookProgress": 84,
+  "trainingHours": 15,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-04-26T02:15:27.381Z"
+  },
+  "updatedAt": {
+    "$date": "2026-04-26T02:15:27.381Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69ed753f242b399c8401ecf9"
+  },
+  "name": "Ana Sofía González",
+  "clinic": {
+    "$oid": "69ed753f242b399c8401eced"
+  },
+  "group": "Jueves a Viernes",
+  "startDate": {
+    "$date": "2026-04-02T18:00:00.000Z"
+  },
+  "notes": "Estudiante 3",
+  "attendancePercentage": 67,
+  "performance": 85,
+  "presentation": 96,
+  "workbookProgress": 96,
+  "trainingHours": 30,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-04-26T02:15:27.381Z"
+  },
+  "updatedAt": {
+    "$date": "2026-04-26T02:15:27.381Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69ed753f242b399c8401ecfa"
+  },
+  "name": "Pedro Andrés Silva",
+  "clinic": {
+    "$oid": "69ed753f242b399c8401eced"
+  },
+  "group": "Sábados",
+  "startDate": {
+    "$date": "2026-04-10T18:00:00.000Z"
+  },
+  "notes": "Estudiante 4",
+  "attendancePercentage": 68,
+  "performance": 87,
+  "presentation": 69,
+  "workbookProgress": 74,
+  "trainingHours": 47,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-04-26T02:15:27.381Z"
+  },
+  "updatedAt": {
+    "$date": "2026-04-26T02:15:27.381Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69ed753f242b399c8401ecfb"
+  },
+  "name": "Catalina Isabel Rojas",
+  "clinic": {
+    "$oid": "69ed753f242b399c8401ecf1"
+  },
+  "group": "Lunes a Viernes",
+  "startDate": {
+    "$date": "2026-03-28T18:00:00.000Z"
+  },
+  "notes": "Estudiante 5",
+  "attendancePercentage": 89,
+  "performance": 61,
+  "presentation": 78,
+  "workbookProgress": 77,
+  "trainingHours": 27,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-04-26T02:15:27.381Z"
+  },
+  "updatedAt": {
+    "$date": "2026-04-26T02:15:27.381Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69ed753f242b399c8401ecfc"
+  },
+  "name": "Diego Alejandro Torres",
+  "clinic": {
+    "$oid": "69ed753f242b399c8401ecf1"
+  },
+  "group": "Lunes a Miércoles",
+  "startDate": {
+    "$date": "2026-03-09T18:00:00.000Z"
+  },
+  "notes": "Estudiante 6",
+  "attendancePercentage": 97,
+  "performance": 66,
+  "presentation": 68,
+  "workbookProgress": 78,
+  "trainingHours": 11,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-04-26T02:15:27.381Z"
+  },
+  "updatedAt": {
+    "$date": "2026-04-26T02:15:27.381Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69ed753f242b399c8401ecfd"
+  },
+  "name": "Valentina Ignacia Fuentes",
+  "clinic": {
+    "$oid": "69ed753f242b399c8401ecf1"
+  },
+  "group": "Lunes a Jueves",
+  "startDate": {
+    "$date": "2026-02-28T18:00:00.000Z"
+  },
+  "notes": "Estudiante 7",
+  "attendancePercentage": 93,
+  "performance": 63,
+  "presentation": 65,
+  "workbookProgress": 71,
+  "trainingHours": 13,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-04-26T02:15:27.381Z"
+  },
+  "updatedAt": {
+    "$date": "2026-04-26T02:15:27.381Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69ed753f242b399c8401ecfe"
+  },
+  "name": "Sebastián Nicolás Vargas",
+  "clinic": {
+    "$oid": "69ed753f242b399c8401ecf1"
+  },
+  "group": "Jueves a Viernes",
+  "startDate": {
+    "$date": "2026-04-18T18:00:00.000Z"
+  },
+  "notes": "Estudiante 8",
+  "attendancePercentage": 90,
+  "performance": 98,
+  "presentation": 66,
+  "workbookProgress": 99,
+  "trainingHours": 31,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-04-26T02:15:27.381Z"
+  },
+  "updatedAt": {
+    "$date": "2026-04-26T02:15:27.381Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69ed753f242b399c8401ecff"
+  },
+  "name": "Isidora Francisca Morales",
+  "clinic": {
+    "$oid": "69ed753f242b399c8401ecf4"
+  },
+  "group": "Sábados",
+  "startDate": {
+    "$date": "2026-04-03T18:00:00.000Z"
+  },
+  "notes": "Estudiante 9",
+  "attendancePercentage": 69,
+  "performance": 74,
+  "presentation": 74,
+  "workbookProgress": 85,
+  "trainingHours": 23,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-04-26T02:15:27.381Z"
+  },
+  "updatedAt": {
+    "$date": "2026-04-26T02:15:27.381Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69ed753f242b399c8401ed00"
+  },
+  "name": "Benjamín Ignacio Espinoza",
+  "clinic": {
+    "$oid": "69ed753f242b399c8401ecf4"
+  },
+  "group": "Lunes a Viernes",
+  "startDate": {
+    "$date": "2026-04-07T18:00:00.000Z"
+  },
+  "notes": "Estudiante 10",
+  "attendancePercentage": 93,
+  "performance": 67,
+  "presentation": 76,
+  "workbookProgress": 84,
+  "trainingHours": 10,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-04-26T02:15:27.381Z"
+  },
+  "updatedAt": {
+    "$date": "2026-04-26T02:15:27.381Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69ed753f242b399c8401ed01"
+  },
+  "name": "Francisca Valentina Paredes",
+  "clinic": {
+    "$oid": "69ed753f242b399c8401ecf4"
+  },
+  "group": "Lunes a Miércoles",
+  "startDate": {
+    "$date": "2026-04-10T18:00:00.000Z"
+  },
+  "notes": "Estudiante 11",
+  "attendancePercentage": 97,
+  "performance": 87,
+  "presentation": 60,
+  "workbookProgress": 96,
+  "trainingHours": 39,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-04-26T02:15:27.381Z"
+  },
+  "updatedAt": {
+    "$date": "2026-04-26T02:15:27.381Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69ed753f242b399c8401ed02"
+  },
+  "name": "Vicente Javier Herrera",
+  "clinic": {
+    "$oid": "69ed753f242b399c8401ecf4"
+  },
+  "group": "Lunes a Jueves",
+  "startDate": {
+    "$date": "2026-04-06T18:00:00.000Z"
+  },
+  "notes": "Estudiante 12",
+  "attendancePercentage": 90,
+  "performance": 77,
+  "presentation": 69,
+  "workbookProgress": 70,
+  "trainingHours": 36,
+  "__v": 0,
+  "createdAt": {
+    "$date": "2026-04-26T02:15:27.381Z"
+  },
+  "updatedAt": {
+    "$date": "2026-04-26T02:15:27.381Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "69ed871cadbcc4038595c6ec"
+  },
+  "name": "Rodriguez Lara Allison Lizbeth",
+  "clinic": {
+    "$oid": "69ed787dbf19981b0dd2cd87"
+  },
+  "group": "Lunes a Miercoles",
+  "startDate": {
+    "$date": "2026-04-15T18:00:00.000Z"
+  },
+  "notes": "",
+  "attendancePercentage": 0,
+  "performance": 0,
+  "presentation": 0,
+  "workbookProgress": 0,
+  "trainingHours": 0,
+  "createdAt": {
+    "$date": "2026-04-26T03:31:40.111Z"
+  },
+  "updatedAt": {
+    "$date": "2026-04-28T01:04:26.783Z"
+  },
+  "__v": 0,
+  "attendanceDays": 0,
+  "totalGroupDays": 25
+},
+{
+  "_id": {
+    "$oid": "69ed88ceadbcc4038595c7b6"
+  },
+  "name": "Borrayo Gonzalez Margarita",
+  "clinic": {
+    "$oid": "69ed787dbf19981b0dd2cd87"
+  },
+  "group": "Jueves-Viernes",
+  "startDate": {
+    "$date": "2026-04-16T18:00:00.000Z"
+  },
+  "notes": "",
+  "attendancePercentage": 0,
+  "performance": 0,
+  "presentation": 0,
+  "workbookProgress": 0,
+  "trainingHours": 0,
+  "createdAt": {
+    "$date": "2026-04-26T03:38:54.657Z"
+  },
+  "updatedAt": {
+    "$date": "2026-04-28T01:04:25.943Z"
+  },
+  "__v": 0,
+  "attendanceDays": 0,
+  "totalGroupDays": 25
+},
+{
+  "_id": {
+    "$oid": "69ed8920adbcc4038595c7e6"
+  },
+  "name": "Tarula Amparo Fatima Aidee",
+  "clinic": {
+    "$oid": "69ed787dbf19981b0dd2cd87"
+  },
+  "group": "Lunes a Miercoles",
+  "startDate": {
+    "$date": "2026-04-15T18:00:00.000Z"
+  },
+  "notes": "",
+  "attendancePercentage": 0,
+  "performance": 0,
+  "presentation": 0,
+  "workbookProgress": 0,
+  "trainingHours": 0,
+  "createdAt": {
+    "$date": "2026-04-26T03:40:16.351Z"
+  },
+  "updatedAt": {
+    "$date": "2026-04-28T01:04:26.949Z"
+  },
+  "__v": 0,
+  "attendanceDays": 0,
+  "totalGroupDays": 25
+},
+{
+  "_id": {
+    "$oid": "69ed8936adbcc4038595c7f5"
+  },
+  "name": "Bernal Vizcarra Carlos Gael",
+  "clinic": {
+    "$oid": "69ed787dbf19981b0dd2cd87"
+  },
+  "group": "Lunes a Miercoles",
+  "startDate": {
+    "$date": "2026-04-15T18:00:00.000Z"
+  },
+  "notes": "",
+  "attendancePercentage": 0,
+  "performance": 0,
+  "presentation": 0,
+  "workbookProgress": 0,
+  "trainingHours": 0,
+  "createdAt": {
+    "$date": "2026-04-26T03:40:38.663Z"
+  },
+  "updatedAt": {
+    "$date": "2026-04-28T01:04:25.773Z"
+  },
+  "__v": 0,
+  "attendanceDays": 0,
+  "totalGroupDays": 25
+},
+{
+  "_id": {
+    "$oid": "69ed8941adbcc4038595c804"
+  },
+  "name": "Estrada López Ángel Etiel",
+  "clinic": {
+    "$oid": "69ed787dbf19981b0dd2cd87"
+  },
+  "group": "Lunes a Miercoles",
+  "startDate": {
+    "$date": "2026-04-15T18:00:00.000Z"
+  },
+  "notes": "",
+  "attendancePercentage": 0,
+  "performance": 0,
+  "presentation": 0,
+  "workbookProgress": 0,
+  "trainingHours": 0,
+  "createdAt": {
+    "$date": "2026-04-26T03:40:49.258Z"
+  },
+  "updatedAt": {
+    "$date": "2026-04-28T01:04:26.111Z"
+  },
+  "__v": 0,
+  "attendanceDays": 0,
+  "totalGroupDays": 25
+},
+{
+  "_id": {
+    "$oid": "69ed89a3adbcc4038595c815"
+  },
+  "name": "Perez Cadena Elva Gabriela",
+  "clinic": {
+    "$oid": "69ed787dbf19981b0dd2cd87"
+  },
+  "group": "Lunes a Miercoles",
+  "startDate": {
+    "$date": "2026-04-15T18:00:00.000Z"
+  },
+  "notes": "",
+  "attendancePercentage": 0,
+  "performance": 0,
+  "presentation": 0,
+  "workbookProgress": 0,
+  "trainingHours": 0,
+  "createdAt": {
+    "$date": "2026-04-26T03:42:27.871Z"
+  },
+  "updatedAt": {
+    "$date": "2026-04-28T01:04:26.448Z"
+  },
+  "__v": 0,
+  "attendanceDays": 0,
+  "totalGroupDays": 25
+},
+{
+  "_id": {
+    "$oid": "69ed89acadbcc4038595c824"
+  },
+  "name": "Zepeda Hernandez Fatima Daniela",
+  "clinic": {
+    "$oid": "69ed787dbf19981b0dd2cd87"
+  },
+  "group": "Lunes a Miercoles",
+  "startDate": {
+    "$date": "2026-04-15T18:00:00.000Z"
+  },
+  "notes": "",
+  "attendancePercentage": 0,
+  "performance": 0,
+  "presentation": 0,
+  "workbookProgress": 0,
+  "trainingHours": 0,
+  "createdAt": {
+    "$date": "2026-04-26T03:42:36.992Z"
+  },
+  "updatedAt": {
+    "$date": "2026-04-28T01:04:27.120Z"
+  },
+  "__v": 0,
+  "attendanceDays": 0,
+  "totalGroupDays": 25
+},
+{
+  "_id": {
+    "$oid": "69ed89b9adbcc4038595c833"
+  },
+  "name": "Quiñones Medina Nahomi Monserrat",
+  "clinic": {
+    "$oid": "69ed787dbf19981b0dd2cd87"
+  },
+  "group": "Jueves-Viernes",
+  "startDate": {
+    "$date": "2026-04-16T18:00:00.000Z"
+  },
+  "notes": "",
+  "attendancePercentage": 0,
+  "performance": 0,
+  "presentation": 0,
+  "workbookProgress": 0,
+  "trainingHours": 0,
+  "createdAt": {
+    "$date": "2026-04-26T03:42:49.153Z"
+  },
+  "updatedAt": {
+    "$date": "2026-04-28T01:04:26.616Z"
+  },
+  "__v": 0,
+  "attendanceDays": 0,
+  "totalGroupDays": 25
+},
+{
+  "_id": {
+    "$oid": "69ed89c1adbcc4038595c842"
+  },
+  "name": "Gonzalez Miramontes Annia Adalay",
+  "clinic": {
+    "$oid": "69ed787dbf19981b0dd2cd87"
+  },
+  "group": "Jueves-Viernes",
+  "startDate": {
+    "$date": "2026-04-16T18:00:00.000Z"
+  },
+  "notes": "",
+  "attendancePercentage": 0,
+  "performance": 0,
+  "presentation": 0,
+  "workbookProgress": 0,
+  "trainingHours": 0,
+  "createdAt": {
+    "$date": "2026-04-26T03:42:57.714Z"
+  },
+  "updatedAt": {
+    "$date": "2026-04-28T01:04:26.279Z"
+  },
+  "__v": 0,
+  "attendanceDays": 0,
+  "totalGroupDays": 25
+},
+{
+  "_id": {
+    "$oid": "69ed8ca2adbcc4038595c8ed"
+  },
+  "name": "Davalos Navarro Katia Meiya",
+  "clinic": {
+    "$oid": "69ed8bf8adbcc4038595c85c"
+  },
+  "group": "Lunes a Miercoles",
+  "startDate": {
+    "$date": "2026-04-15T18:00:00.000Z"
+  },
+  "notes": "",
+  "attendancePercentage": 0,
+  "performance": 0,
+  "presentation": 0,
+  "workbookProgress": 0,
+  "trainingHours": 0,
+  "createdAt": {
+    "$date": "2026-04-26T03:55:14.894Z"
+  },
+  "updatedAt": {
+    "$date": "2026-04-26T03:55:14.894Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69ed8cbcadbcc4038595c903"
+  },
+  "name": "Murillo Mejia Aruba",
+  "clinic": {
+    "$oid": "69ed8bf8adbcc4038595c85c"
+  },
+  "group": "Lunes a Miercoles",
+  "startDate": {
+    "$date": "2026-04-15T18:00:00.000Z"
+  },
+  "notes": "",
+  "attendancePercentage": 0,
+  "performance": 0,
+  "presentation": 0,
+  "workbookProgress": 0,
+  "trainingHours": 0,
+  "createdAt": {
+    "$date": "2026-04-26T03:55:40.864Z"
+  },
+  "updatedAt": {
+    "$date": "2026-04-26T03:55:40.864Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69ed8cf0adbcc4038595c912"
+  },
+  "name": "Cardenas Rosas Naidely Jaylen",
+  "clinic": {
+    "$oid": "69ed8bf8adbcc4038595c85c"
+  },
+  "group": "Lunes a Miercoles",
+  "startDate": {
+    "$date": "2026-04-15T18:00:00.000Z"
+  },
+  "notes": "",
+  "attendancePercentage": 0,
+  "performance": 0,
+  "presentation": 0,
+  "workbookProgress": 0,
+  "trainingHours": 0,
+  "createdAt": {
+    "$date": "2026-04-26T03:56:32.471Z"
+  },
+  "updatedAt": {
+    "$date": "2026-04-26T03:56:32.471Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69ed8d1cadbcc4038595c923"
+  },
+  "name": "Iturbide Gonzalez Hannah",
+  "clinic": {
+    "$oid": "69ed8bf8adbcc4038595c85c"
+  },
+  "group": "Lunes a Miercoles",
+  "startDate": {
+    "$date": "2026-04-15T18:00:00.000Z"
+  },
+  "notes": "",
+  "attendancePercentage": 0,
+  "performance": 0,
+  "presentation": 0,
+  "workbookProgress": 0,
+  "trainingHours": 0,
+  "createdAt": {
+    "$date": "2026-04-26T03:57:16.540Z"
+  },
+  "updatedAt": {
+    "$date": "2026-04-26T03:57:16.540Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69ed8d3cadbcc4038595c932"
+  },
+  "name": "Arizmendi Herrera Carmen Anel",
+  "clinic": {
+    "$oid": "69ed8bf8adbcc4038595c85c"
+  },
+  "group": "Lunes a Miercoles",
+  "startDate": {
+    "$date": "2026-04-15T18:00:00.000Z"
+  },
+  "notes": "",
+  "attendancePercentage": 0,
+  "performance": 0,
+  "presentation": 0,
+  "workbookProgress": 0,
+  "trainingHours": 0,
+  "createdAt": {
+    "$date": "2026-04-26T03:57:48.659Z"
+  },
+  "updatedAt": {
+    "$date": "2026-04-26T03:57:48.659Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69ed8d5cadbcc4038595c941"
+  },
+  "name": "Silva Gonzalez Marcela Claudette",
+  "clinic": {
+    "$oid": "69ed8bf8adbcc4038595c85c"
+  },
+  "group": "Jueves-Viernes",
+  "startDate": {
+    "$date": "2026-04-16T18:00:00.000Z"
+  },
+  "notes": "",
+  "attendancePercentage": 0,
+  "performance": 0,
+  "presentation": 0,
+  "workbookProgress": 0,
+  "trainingHours": 0,
+  "createdAt": {
+    "$date": "2026-04-26T03:58:20.545Z"
+  },
+  "updatedAt": {
+    "$date": "2026-04-26T03:58:20.545Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69ed8d80adbcc4038595c957"
+  },
+  "name": "Hernandez Mancinas Perla Lizeth",
+  "clinic": {
+    "$oid": "69ed8bf8adbcc4038595c85c"
+  },
+  "group": "Jueves-Viernes",
+  "startDate": {
+    "$date": "2026-04-16T18:00:00.000Z"
+  },
+  "notes": "+1",
+  "attendancePercentage": 0,
+  "performance": 0,
+  "presentation": 0,
+  "workbookProgress": 0,
+  "trainingHours": 0,
+  "createdAt": {
+    "$date": "2026-04-26T03:58:56.218Z"
+  },
+  "updatedAt": {
+    "$date": "2026-04-26T03:58:56.218Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69ed8de5adbcc4038595c9e7"
+  },
+  "name": "alumno prueba",
+  "clinic": {
+    "$oid": "69ed787dbf19981b0dd2cd87"
+  },
+  "group": "Lunes a Miercoles",
+  "startDate": {
+    "$date": "2026-04-15T18:00:00.000Z"
+  },
+  "notes": "",
+  "attendancePercentage": 8,
+  "performance": 90,
+  "presentation": 80,
+  "workbookProgress": 88.55,
+  "trainingHours": 28,
+  "createdAt": {
+    "$date": "2026-04-26T04:00:37.956Z"
+  },
+  "updatedAt": {
+    "$date": "2026-04-28T01:04:27.288Z"
+  },
+  "__v": 0,
+  "attendanceDays": 2,
+  "totalGroupDays": 25
+},
+{
+  "_id": {
+    "$oid": "69f008a30405fd0d5d57b2fd"
+  },
+  "name": "Mitch lucker",
+  "clinic": {
+    "$oid": "69f008980405fd0d5d57b2ee"
+  },
+  "group": "lunes a miercoles",
+  "startDate": {
+    "$date": "2026-04-15T18:00:00.000Z"
+  },
+  "notes": "",
+  "attendancePercentage": 0,
+  "totalGroupDays": 25,
+  "attendanceDays": 0,
+  "performance": 0,
+  "presentation": 0,
+  "workbookProgress": 0,
+  "trainingHours": 0,
+  "createdAt": {
+    "$date": "2026-04-28T01:08:51.244Z"
+  },
+  "updatedAt": {
+    "$date": "2026-04-28T01:08:51.244Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69f00a28eea791220d2e40a4"
+  },
+  "name": "Mitch lucker",
+  "clinic": {
+    "$oid": "69f00a18eea791220d2e4095"
+  },
+  "group": "Lunes a Miercoles",
+  "startDate": {
+    "$date": "2026-04-15T18:00:00.000Z"
+  },
+  "notes": "",
+  "attendancePercentage": 0,
+  "totalGroupDays": 25,
+  "attendanceDays": 0,
+  "performance": 0,
+  "presentation": 0,
+  "workbookProgress": 0,
+  "trainingHours": 0,
+  "createdAt": {
+    "$date": "2026-04-28T01:15:20.903Z"
+  },
+  "updatedAt": {
+    "$date": "2026-04-28T01:15:20.903Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69f00bb8eea791220d2e40fc"
+  },
+  "name": "Mitch lucker",
+  "clinic": {
+    "$oid": "69f00b95eea791220d2e40e7"
+  },
+  "group": "Lunes a Miercoles",
+  "startDate": {
+    "$date": "2026-04-15T18:00:00.000Z"
+  },
+  "notes": "",
+  "attendancePercentage": 4,
+  "totalGroupDays": 25,
+  "attendanceDays": 1,
+  "performance": 90,
+  "presentation": 80,
+  "workbookProgress": 89.60000000000001,
+  "trainingHours": 45,
+  "createdAt": {
+    "$date": "2026-04-28T01:22:00.684Z"
+  },
+  "updatedAt": {
+    "$date": "2026-04-28T01:33:29.901Z"
+  },
+  "__v": 0
+}]

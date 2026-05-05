@@ -1,0 +1,114 @@
+[{
+  "_id": {
+    "$oid": "69ed787dbf19981b0dd2cd87"
+  },
+  "name": "Cruz Roja",
+  "address": "Avenida de los Insurgentes, Rey Nayar, 63190 Tepic, Nay.",
+  "totalStudents": 10,
+  "groups": [
+    {
+      "name": "Lunes a Miercoles",
+      "days": [
+        "Lunes",
+        "Martes",
+        "Miércoles"
+      ],
+      "duration": "25",
+      "activities": 1,
+      "_id": {
+        "$oid": "69ed787dbf19981b0dd2cd88"
+      }
+    },
+    {
+      "name": "Jueves-Viernes",
+      "days": [
+        "Jueves",
+        "Viernes"
+      ],
+      "duration": "18",
+      "activities": 1,
+      "_id": {
+        "$oid": "69ed787dbf19981b0dd2cd89"
+      }
+    }
+  ],
+  "createdAt": {
+    "$date": "2026-04-26T02:29:17.053Z"
+  },
+  "updatedAt": {
+    "$date": "2026-04-26T04:00:38.040Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69ed8bf8adbcc4038595c85c"
+  },
+  "name": "Casa Alegria Cd. Del Valle",
+  "address": "C. P.º de Viena 29, Cd del Valle, 63157 Tepic, Nay.",
+  "totalStudents": 7,
+  "groups": [
+    {
+      "name": "Lunes a Miercoles",
+      "days": [
+        "Lunes",
+        "Martes",
+        "Miércoles"
+      ],
+      "duration": "25",
+      "activities": 1,
+      "_id": {
+        "$oid": "69ed8bf8adbcc4038595c85d"
+      }
+    },
+    {
+      "name": "Jueves-Viernes",
+      "days": [
+        "Jueves",
+        "Viernes"
+      ],
+      "duration": "18",
+      "activities": 0,
+      "_id": {
+        "$oid": "69ed8bf8adbcc4038595c85e"
+      }
+    }
+  ],
+  "createdAt": {
+    "$date": "2026-04-26T03:52:24.831Z"
+  },
+  "updatedAt": {
+    "$date": "2026-04-26T03:58:56.317Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69f00b95eea791220d2e40e7"
+  },
+  "name": "Lomas Turbas",
+  "address": "lomas1",
+  "totalStudents": 1,
+  "groups": [
+    {
+      "name": "Lunes a Miercoles",
+      "days": [
+        "Lunes",
+        "Martes",
+        "Miércoles"
+      ],
+      "duration": "39 dias",
+      "activities": 0,
+      "_id": {
+        "$oid": "69f00b95eea791220d2e40e8"
+      }
+    }
+  ],
+  "createdAt": {
+    "$date": "2026-04-28T01:21:25.990Z"
+  },
+  "updatedAt": {
+    "$date": "2026-04-28T01:22:00.764Z"
+  },
+  "__v": 0
+}]

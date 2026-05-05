@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: gestion-alumnos-clinicas
+    env: static
+    buildCommand: cd client && npm install && npm run build
+    publishPath: client/build
+    staticPublishPath: client/build
+    envVars:
+      - key: NODE_VERSION
+        value: 18
+    headers:
+      - source: /static/*
+        headers:
+          - key: Cache-Control
+            value: public, max-age=31536000, immutable
+    routes:
+      - type: rewrite
+        source: /*
+        destination: /index.html

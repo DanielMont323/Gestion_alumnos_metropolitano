@@ -1,0 +1,104 @@
+[{
+  "_id": {
+    "$oid": "69ed8d91adbcc4038595c976"
+  },
+  "clinic": {
+    "$oid": "69ed8bf8adbcc4038595c85c"
+  },
+  "workbookActivitiesMax": 10,
+  "trainingHoursMax": 50,
+  "workbookMultiplier": 10,
+  "trainingMultiplier": 2,
+  "createdAt": {
+    "$date": "2026-04-26T03:59:13.730Z"
+  },
+  "updatedAt": {
+    "$date": "2026-04-26T03:59:13.730Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69f008a60405fd0d5d57b30c"
+  },
+  "clinic": {
+    "$oid": "69f008980405fd0d5d57b2ee"
+  },
+  "workbookActivitiesMax": 26,
+  "trainingHoursMax": 30,
+  "workbookMultiplier": 3.85,
+  "trainingMultiplier": 3.33,
+  "createdAt": {
+    "$date": "2026-04-28T01:08:54.871Z"
+  },
+  "updatedAt": {
+    "$date": "2026-04-28T01:08:54.871Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69f00a2beea791220d2e40b3"
+  },
+  "clinic": {
+    "$oid": "69f00a18eea791220d2e4095"
+  },
+  "workbookActivitiesMax": 39,
+  "trainingHoursMax": 55,
+  "workbookMultiplier": 2.56,
+  "trainingMultiplier": 1.82,
+  "attendanceDaysMax": 39,
+  "performanceMax": 100,
+  "presentationMax": 100,
+  "createdAt": {
+    "$date": "2026-04-28T01:15:23.695Z"
+  },
+  "updatedAt": {
+    "$date": "2026-04-28T01:28:59.210Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69f00aac8ac42b9230d6f423"
+  },
+  "clinic": {
+    "$oid": "69ed787dbf19981b0dd2cd87"
+  },
+  "workbookActivitiesMax": 26,
+  "trainingHoursMax": 30,
+  "workbookMultiplier": 3.85,
+  "trainingMultiplier": 3.33,
+  "attendanceDaysMax": 20,
+  "performanceMax": 100,
+  "presentationMax": 100,
+  "createdAt": {
+    "$date": "2026-04-28T01:17:32.905Z"
+  },
+  "updatedAt": {
+    "$date": "2026-04-28T01:17:32.905Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "69f00b9aeea791220d2e40f3"
+  },
+  "clinic": {
+    "$oid": "69f00b95eea791220d2e40e7"
+  },
+  "workbookActivitiesMax": 39,
+  "trainingHoursMax": 55,
+  "workbookMultiplier": 2.56,
+  "trainingMultiplier": 1.82,
+  "attendanceDaysMax": 39,
+  "performanceMax": 100,
+  "presentationMax": 100,
+  "createdAt": {
+    "$date": "2026-04-28T01:21:30.290Z"
+  },
+  "updatedAt": {
+    "$date": "2026-04-28T01:24:57.785Z"
+  },
+  "__v": 0
+}]
