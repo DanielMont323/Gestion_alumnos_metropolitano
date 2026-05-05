@@ -1,6 +1,23 @@
 services:
+  # Backend API Service
   - type: web
-    name: gestion-alumnos-clinicas
+    name: gestion-alumnos-api
+    env: node
+    buildCommand: cd server && npm install
+    startCommand: cd server && npm start
+    envVars:
+      - key: NODE_VERSION
+        value: 18
+      - key: MONGODB_URI
+        sync: false
+      - key: JWT_SECRET
+        sync: false
+      - key: PORT
+        value: 5000
+
+  # Frontend Static Site
+  - type: web
+    name: gestion-alumnos-frontend
     env: static
     buildCommand: cd client && npm install && npm run build
     publishPath: client/build
@@ -8,6 +25,8 @@ services:
     envVars:
       - key: NODE_VERSION
         value: 18
+      - key: REACT_APP_API_URL
+        value: https://gestion-alumnos-api.onrender.com
     headers:
       - source: /static/*
         headers:
