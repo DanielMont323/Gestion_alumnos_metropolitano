@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const dotenv = require('dotenv');
+const path = require('path');
 
 dotenv.config();
 
@@ -38,8 +39,12 @@ app.use('/api/evaluations', require('./routes/evaluations'));
 app.use('/api/evaluation-criteria', require('./routes/evaluationCriteria'));
 app.use('/api/reports', require('./routes/reports'));
 
-app.get('/', (req, res) => {
-  res.json({ message: 'Student Management System API' });
+// Serve static files from React app
+app.use(express.static(path.join(__dirname, '../client/build')));
+
+// Handle React routing, return all requests to React app
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../client/build', 'index.html'));
 });
 
 app.listen(PORT, () => {
