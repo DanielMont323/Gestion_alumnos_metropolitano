@@ -1,13 +1,16 @@
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
+const dotenv = require('dotenv');
 const User = require('./models/User');
 const Clinic = require('./models/Clinic');
 const Student = require('./models/Student');
 const Attendance = require('./models/Attendance');
 const Evaluation = require('./models/Evaluation');
 
+dotenv.config();
+
 // MongoDB connection
-mongoose.connect('mongodb+srv://Spacecards:Yomero2420@cluster0.xi0cc.mongodb.net/gestion_alumnos?retryWrites=true&w=majority', {
+mongoose.connect(process.env.MONGODB_URI || 'mongodb+srv://Spacecards:Yomero2420@cluster0.xi0cc.mongodb.net/inventario?retryWrites=true&w=majority', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
@@ -128,6 +131,7 @@ const seedData = async () => {
       const groupIndex = i % groups.length;
       
       const startDate = new Date();
+      startDate.setHours(12, 0, 0, 0); // Set to noon to avoid timezone issues
       startDate.setDate(startDate.getDate() - Math.floor(Math.random() * 60));
 
       students.push({
@@ -155,6 +159,7 @@ const seedData = async () => {
       // Create attendance for the last 30 days
       for (let i = 0; i < 30; i++) {
         const date = new Date(today);
+        date.setHours(12, 0, 0, 0); // Set to noon to avoid timezone issues
         date.setDate(date.getDate() - i);
         
         // Random attendance (70% chance of attending)
@@ -181,6 +186,7 @@ const seedData = async () => {
       
       for (let i = 0; i < evaluationCount; i++) {
         const date = new Date();
+        date.setHours(12, 0, 0, 0); // Set to noon to avoid timezone issues
         date.setDate(date.getDate() - Math.floor(Math.random() * 30));
         
         evaluations.push({

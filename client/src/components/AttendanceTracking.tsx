@@ -1,11 +1,18 @@
 import React, { useState, useEffect } from 'react';
-import { studentsAPI, attendanceAPI } from '../services/api';
-import { Calendar, CheckCircle, XCircle, Save } from 'lucide-react';
+import { studentsAPI, attendanceAPI, clinicsAPI } from '../services/api';
+import { Calendar, CheckCircle, XCircle, Save, Filter } from 'lucide-react';
 
 interface Student {
   _id: string;
   name: string;
   group: string;
+}
+
+interface ClinicGroup {
+  name: string;
+  days: string[];
+  duration: string;
+  activities: number;
 }
 
 interface AttendanceRecord {
@@ -23,33 +30,62 @@ const AttendanceTracking: React.FC<AttendanceTrackingProps> = ({
   clinicName,
 }) => {
   const [students, setStudents] = useState<Student[]>([]);
+  const [allStudents, setAllStudents] = useState<Student[]>([]);
   const [selectedDate, setSelectedDate] = useState(new Date().toISOString().split('T')[0]);
   const [attendance, setAttendance] = useState<AttendanceRecord[]>([]);
+  const [selectedGroup, setSelectedGroup] = useState<string>('all');
+  const [clinicGroups, setClinicGroups] = useState<ClinicGroup[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [isSaving, setIsSaving] = useState(false);
   const [error, setError] = useState('');
   const [success, setSuccess] = useState('');
 
   useEffect(() => {
-    fetchStudents();
-  }, [clinicId]);
+    fetchClinicData();
+  }, [clinicId]); // eslint-disable-line react-hooks/exhaustive-deps
 
-  const fetchStudents = async () => {
+  useEffect(() => {
+    filterStudents();
+  }, [selectedGroup, allStudents]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  const fetchClinicData = async () => {
     try {
       setIsLoading(true);
-      const response = await studentsAPI.getByClinic(clinicId);
-      const studentsData = response.data.students || response.data;
+      
+      // Fetch clinic data to get groups
+      const clinicResponse = await clinicsAPI.getById(clinicId);
+      setClinicGroups(clinicResponse.data.groups || []);
+      
+      // Fetch students
+      const studentsResponse = await studentsAPI.getByClinic(clinicId);
+      const studentsData = studentsResponse.data.students || studentsResponse.data;
+      setAllStudents(studentsData);
       setStudents(studentsData);
       setAttendance(studentsData.map((student: Student) => ({
         studentId: student._id,
         attended: false,
       })));
     } catch (err: any) {
-      setError('Error al cargar los alumnos');
-      console.error('Error fetching students:', err);
+      setError('Error al cargar los datos');
+      console.error('Error fetching clinic data:', err);
     } finally {
       setIsLoading(false);
     }
+  };
+
+  const filterStudents = () => {
+    if (selectedGroup === 'all') {
+      setStudents(allStudents);
+    } else {
+      const filtered = allStudents.filter(student => student.group === selectedGroup);
+      setStudents(filtered);
+    }
+    
+    // Reset attendance for filtered students
+    setAttendance(allStudents.map((student: Student) => ({
+      studentId: student._id,
+      attended: false,
+    })));
   };
 
   const handleAttendanceChange = (studentId: string, attended: boolean) => {
@@ -66,9 +102,13 @@ const AttendanceTracking: React.FC<AttendanceTrackingProps> = ({
     setSuccess('');
 
     try {
+      // Fix timezone issue by creating date at noon in local timezone
+      const attendanceDate = new Date(selectedDate);
+      attendanceDate.setHours(12, 0, 0, 0); // Set to noon to avoid timezone issues
+      
       await attendanceAPI.createBulk({
         clinicId,
-        date: selectedDate,
+        date: attendanceDate.toISOString().split('T')[0], // Send as YYYY-MM-DD format
         attendanceRecords: attendance,
       });
       setSuccess('Asistencia guardada exitosamente');
@@ -122,6 +162,35 @@ const AttendanceTracking: React.FC<AttendanceTrackingProps> = ({
           </div>
           <div className="text-sm text-gray-600 font-medium">
             {formatDate(selectedDate)}
+          </div>
+        </div>
+
+        {/* Group Filter */}
+        <div className="flex flex-col md:flex-row md:items-center gap-4 mb-6">
+          <div className="flex items-center gap-2">
+            <Filter size={20} className="text-gray-600" />
+            <label htmlFor="group" className="text-sm font-medium text-gray-700">
+              Filtrar por grupo:
+            </label>
+            <select
+              id="group"
+              value={selectedGroup}
+              onChange={(e) => setSelectedGroup(e.target.value)}
+              className="flex-1 md:flex-none px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent outline-none text-sm"
+            >
+              <option value="all">Todos los grupos</option>
+              {clinicGroups.map((group, index) => (
+                <option key={index} value={group.name}>
+                  {group.name}
+                </option>
+              ))}
+            </select>
+          </div>
+          <div className="text-sm text-gray-600">
+            {selectedGroup === 'all' 
+              ? `Mostrando ${allStudents.length} alumnos`
+              : `Mostrando ${students.length} alumnos de ${selectedGroup}`
+            }
           </div>
         </div>
 

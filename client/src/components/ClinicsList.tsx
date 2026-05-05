@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { clinicsAPI } from '../services/api';
-import { Building2, MapPin, Users, ChevronRight, Sun, Moon, Coffee, Plus } from 'lucide-react';
+import { Building2, MapPin, Users, ChevronRight, Sun, Moon, Coffee, Plus, Edit, Trash2, Settings } from 'lucide-react';
 import AddClinicForm from './AddClinicForm';
+import EditClinicForm from './EditClinicForm';
+import ManageGroups from './ManageGroups';
 
 interface Clinic {
   _id: string;
@@ -27,6 +29,8 @@ const ClinicsList: React.FC<ClinicsListProps> = ({ onSelectClinic }) => {
   const [greeting, setGreeting] = useState('');
   const [greetingIcon, setGreetingIcon] = useState<React.ReactNode>(null);
   const [showAddClinic, setShowAddClinic] = useState(false);
+  const [editingClinic, setEditingClinic] = useState<Clinic | null>(null);
+  const [managingGroups, setManagingGroups] = useState<Clinic | null>(null);
 
   useEffect(() => {
     fetchClinics();
@@ -61,6 +65,26 @@ const ClinicsList: React.FC<ClinicsListProps> = ({ onSelectClinic }) => {
 
   const handleClinicSuccess = () => {
     fetchClinics();
+  };
+
+  const handleEditClinic = (clinic: Clinic) => {
+    setEditingClinic(clinic);
+  };
+
+  const handleDeleteClinic = async (clinicId: string, clinicName: string) => {
+    if (window.confirm(`¿Está seguro de que desea eliminar la clínica "${clinicName}"? Esta acción no se puede deshacer.`)) {
+      try {
+        await clinicsAPI.delete(clinicId);
+        fetchClinics();
+      } catch (err: any) {
+        setError('Error al eliminar la clínica');
+        console.error('Error deleting clinic:', err);
+      }
+    }
+  };
+
+  const handleManageGroups = (clinic: Clinic) => {
+    setManagingGroups(clinic);
   };
 
   const getDayName = () => {
@@ -179,6 +203,29 @@ const ClinicsList: React.FC<ClinicsListProps> = ({ onSelectClinic }) => {
                   </div>
                 </div>
               </div>
+              <div className="flex gap-2">
+                <button
+                  onClick={() => handleManageGroups(clinic)}
+                  className="p-2 text-green-600 hover:bg-green-50 rounded-lg transition-colors"
+                  title="Gestionar grupos"
+                >
+                  <Settings size={18} />
+                </button>
+                <button
+                  onClick={() => handleEditClinic(clinic)}
+                  className="p-2 text-blue-600 hover:bg-blue-50 rounded-lg transition-colors"
+                  title="Editar clínica"
+                >
+                  <Edit size={18} />
+                </button>
+                <button
+                  onClick={() => handleDeleteClinic(clinic._id, clinic.name)}
+                  className="p-2 text-red-600 hover:bg-red-50 rounded-lg transition-colors"
+                  title="Eliminar clínica"
+                >
+                  <Trash2 size={18} />
+                </button>
+              </div>
             </div>
 
             <div className="flex items-center justify-between mb-4">
@@ -206,6 +253,22 @@ const ClinicsList: React.FC<ClinicsListProps> = ({ onSelectClinic }) => {
         <AddClinicForm
           onClose={() => setShowAddClinic(false)}
           onSuccess={handleClinicSuccess}
+        />
+      )}
+
+      {editingClinic && (
+        <EditClinicForm
+          clinic={editingClinic}
+          onClose={() => setEditingClinic(null)}
+          onSuccess={handleClinicSuccess}
+        />
+      )}
+
+      {managingGroups && (
+        <ManageGroups
+          clinic={managingGroups}
+          onClose={() => setManagingGroups(null)}
+          onUpdate={handleClinicSuccess}
         />
       )}
 

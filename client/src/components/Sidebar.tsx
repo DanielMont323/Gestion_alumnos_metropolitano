@@ -11,7 +11,8 @@ import {
   User, 
   LogOut,
   Menu,
-  X
+  X,
+  BarChart3
 } from 'lucide-react';
 
 interface SidebarProps {
@@ -29,6 +30,7 @@ const Sidebar: React.FC<SidebarProps> = ({ currentClinic }) => {
     { path: '/clinics', label: 'Clínicas', icon: Building2 },
     { path: '/students', label: 'Alumnos', icon: Users },
     { path: '/attendance', label: 'Asistencia', icon: CheckSquare },
+    { path: '/attendance-by-group', label: 'Asistencia por Grupo', icon: BarChart3 },
     { path: '/evaluations', label: 'Evaluaciones', icon: ClipboardList },
     { path: '/reports', label: 'Reportes', icon: FileText },
     { path: '/profile', label: 'Perfil', icon: User },

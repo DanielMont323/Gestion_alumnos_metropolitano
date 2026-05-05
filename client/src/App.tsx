@@ -7,9 +7,11 @@ import ClinicsList from './components/ClinicsList';
 import StudentsList from './components/StudentsList';
 import AddStudentForm from './components/AddStudentForm';
 import AttendanceTracking from './components/AttendanceTracking';
+import AttendanceByGroup from './components/AttendanceByGroup';
 import StudentProgress from './components/StudentProgress';
 import AttendanceHistory from './components/AttendanceHistory';
 import StudentEvaluation from './components/StudentEvaluation';
+import EvaluationCriteriaManager from './components/EvaluationCriteriaManager';
 import Reports from './components/Reports';
 import './App.css';
 
@@ -42,7 +44,6 @@ const AttendanceHistoryWrapper: React.FC<{ clinicName: string }> = ({ clinicName
 
 const AppContent: React.FC = () => {
   const { user, isLoading } = useAuth();
-  const location = useLocation();
   const navigate = useNavigate();
   const [selectedClinic, setSelectedClinic] = useState<Clinic | null>(() => {
     const saved = localStorage.getItem('selectedClinic');
@@ -50,6 +51,7 @@ const AppContent: React.FC = () => {
   });
   const [showAddStudent, setShowAddStudent] = useState(false);
   const [showStudentEvaluation, setShowStudentEvaluation] = useState(false);
+  const [showEvaluationCriteria, setShowEvaluationCriteria] = useState(false);
   const [selectedStudent, setSelectedStudent] = useState<Student | null>(null);
 
   if (isLoading) {
@@ -101,6 +103,18 @@ const AppContent: React.FC = () => {
     // Refrescar
   };
 
+  const handleManageCriteria = () => {
+    setShowEvaluationCriteria(true);
+  };
+
+  const handleCloseEvaluationCriteria = () => {
+    setShowEvaluationCriteria(false);
+  };
+
+  const handleEvaluationCriteriaSuccess = () => {
+    // Refrescar
+  };
+
   return (
     <div className="flex h-screen bg-gray-100">
       <Sidebar currentClinic={selectedClinic?.name} />
@@ -118,6 +132,7 @@ const AppContent: React.FC = () => {
                   onAddStudent={handleAddStudent}
                   onViewStudent={handleViewStudent}
                   onEditStudent={handleEditStudent}
+                  onManageCriteria={handleManageCriteria}
                 />
                 {showAddStudent && (
                   <AddStudentForm
@@ -135,6 +150,14 @@ const AppContent: React.FC = () => {
                     onSuccess={handleEvaluationSuccess}
                   />
                 )}
+                {showEvaluationCriteria && (
+                  <EvaluationCriteriaManager
+                    clinicId={selectedClinic?._id || ''}
+                    clinicName={selectedClinic?.name || ''}
+                    onClose={handleCloseEvaluationCriteria}
+                    onSuccess={handleEvaluationCriteriaSuccess}
+                  />
+                )}
               </>
             ) : (
               <Navigate to="/" replace />
@@ -144,6 +167,17 @@ const AppContent: React.FC = () => {
           <Route path="/attendance" element={
             selectedClinic ? (
               <AttendanceTracking
+                clinicId={selectedClinic?._id || ''}
+                clinicName={selectedClinic?.name || ''}
+              />
+            ) : (
+              <Navigate to="/" replace />
+            )
+          } />
+
+          <Route path="/attendance-by-group" element={
+            selectedClinic ? (
+              <AttendanceByGroup
                 clinicId={selectedClinic?._id || ''}
                 clinicName={selectedClinic?.name || ''}
               />

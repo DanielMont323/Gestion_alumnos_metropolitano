@@ -67,10 +67,16 @@ router.post('/', [
       return res.status(404).json({ message: 'Student not found' });
     }
 
-    // Calculate derived metrics
+    // Get evaluation criteria for the clinic
+    const EvaluationCriteria = require('../models/EvaluationCriteria');
+    const criteria = await EvaluationCriteria.findOne({ clinic: studentData.clinic });
+    
+    // Calculate derived metrics using dynamic criteria
     const attendance = studentData.attendancePercentage || 0;
-    const workbook = Math.min(100, (workbookActivities || 0) * 10); // Assuming 10 activities = 100%
-    const constantTraining = Math.min(100, (trainingHours || 0) * 2); // Assuming 50 hours = 100%
+    const workbookMultiplier = criteria ? criteria.workbookMultiplier : 10; // Default fallback
+    const trainingMultiplier = criteria ? criteria.trainingMultiplier : 2; // Default fallback
+    const workbook = Math.min(100, (workbookActivities || 0) * workbookMultiplier);
+    const constantTraining = Math.min(100, (trainingHours || 0) * trainingMultiplier);
 
     const evaluation = new Evaluation({
       student,

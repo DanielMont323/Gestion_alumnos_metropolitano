@@ -14,7 +14,11 @@ const evaluationSchema = new mongoose.Schema({
   date: {
     type: Date,
     required: true,
-    default: Date.now
+    default: () => {
+      const now = new Date();
+      now.setHours(12, 0, 0, 0); // Set to noon to avoid timezone issues
+      return now;
+    }
   },
   performance: {
     type: Number,
