@@ -58,6 +58,7 @@ export const studentsAPI = {
 
 export const attendanceAPI = {
   getAll: (params?: any) => api.get('/attendance', { params }),
+  getByStudent: (studentId: string) => api.get('/attendance', { params: { studentId } }),
   getByStudentMonth: (studentId: string, month: number, year: number) =>
     api.get(`/attendance/student/${studentId}/month/${month}/${year}`),
   create: (data: any) => api.post('/attendance', data),

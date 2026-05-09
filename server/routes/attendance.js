@@ -1,6 +1,7 @@
 const express = require('express');
 const Attendance = require('../models/Attendance');
 const Student = require('../models/Student');
+const EvaluationCriteria = require('../models/EvaluationCriteria');
 const { body, validationResult } = require('express-validator');
 
 const router = express.Router();
@@ -87,7 +88,7 @@ router.post('/', [
       await existingAttendance.save();
       
       // Update student attendance percentage
-      await updateStudentAttendancePercentage(student);
+      await updateStudentAttendancePercentage(student, clinic);
       
       const populatedAttendance = await Attendance.findById(existingAttendance._id)
         .populate('student', 'name group')
@@ -100,7 +101,7 @@ router.post('/', [
       await attendance.save();
 
       // Update student attendance percentage
-      await updateStudentAttendancePercentage(student);
+      await updateStudentAttendancePercentage(student, clinic);
 
       const populatedAttendance = await Attendance.findById(attendance._id)
         .populate('student', 'name group')
@@ -150,7 +151,7 @@ router.post('/bulk', async (req, res) => {
 
     // Update student attendance percentages
     for (const record of attendanceRecords) {
-      await updateStudentAttendancePercentage(record.studentId);
+      await updateStudentAttendancePercentage(record.studentId, clinicId);
     }
 
     const populatedResults = await Attendance.find({
@@ -165,18 +166,22 @@ router.post('/bulk', async (req, res) => {
 });
 
 // Helper function to update student attendance percentage
-async function updateStudentAttendancePercentage(studentId) {
+async function updateStudentAttendancePercentage(studentId, clinicId) {
   try {
+    // Count attended sessions for this specific clinic only
     const attendedSessions = await Attendance.countDocuments({ 
       student: studentId, 
+      clinic: clinicId,
       attended: true 
     });
     
-    // Use 25 days as the base for 100% attendance
-    const totalGroupDays = 25;
+    // Get clinic's evaluation criteria for attendance days
+    const criteria = await EvaluationCriteria.findOne({ clinic: clinicId });
+    const totalGroupDays = criteria ? criteria.attendanceDaysMax : 25; // Default to 25 if no criteria found
+    
     const attendancePercentage = Math.round((attendedSessions / totalGroupDays) * 100);
     
-    console.log(`Updating attendance for student ${studentId}: ${attendedSessions}/${totalGroupDays} = ${attendancePercentage}%`);
+    console.log(`Updating attendance for student ${studentId} in clinic ${clinicId}: ${attendedSessions}/${totalGroupDays} = ${attendancePercentage}%`);
     
     await Student.findByIdAndUpdate(studentId, { 
       attendancePercentage,

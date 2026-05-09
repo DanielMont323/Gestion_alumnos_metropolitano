@@ -57,6 +57,7 @@ const StudentProgress: React.FC<StudentProgressProps> = ({ studentId, clinicName
     performanceMax: 100,
     presentationMax: 100,
   });
+  const [attendanceRecords, setAttendanceRecords] = useState<any[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState('');
 
@@ -82,11 +83,28 @@ const StudentProgress: React.FC<StudentProgressProps> = ({ studentId, clinicName
     try {
       const studentResponse = await studentsAPI.getById(studentId);
       await fetchCriteria(); // Load criteria after getting student data
-      setStudent(studentResponse.data);
+      const studentData = studentResponse.data;
+      setStudent(studentData);
 
-      const evaluationResponse = await evaluationsAPI.getLatestByStudent(studentId);
-      if (evaluationResponse.data) {
-        setEvaluation(evaluationResponse.data);
+      // Fetch actual attendance records
+      const clinicId = typeof studentData.clinic === 'string' ? studentData.clinic : (studentData.clinic as any)?._id;
+      if (clinicId) {
+        const attendanceResponse = await attendanceAPI.getByStudent(studentId);
+        setAttendanceRecords(attendanceResponse.data.filter((r: any) => r.attended));
+      }
+
+      try {
+        const evaluationResponse = await evaluationsAPI.getLatestByStudent(studentId);
+        if (evaluationResponse.data) {
+          setEvaluation(evaluationResponse.data);
+        }
+      } catch (evalErr: any) {
+        // 404 means no evaluation exists yet - this is normal for new students
+        if (evalErr.response?.status !== 404) {
+          console.error('Error fetching evaluation:', evalErr);
+        }
+        // Set evaluation to null (no evaluation yet)
+        setEvaluation(null);
       }
     } catch (err: any) {
       setError('Error al cargar los datos del alumno');
@@ -189,14 +207,14 @@ const StudentProgress: React.FC<StudentProgressProps> = ({ studentId, clinicName
                     <CheckSquare size={16} className="text-blue-600" />
                     <span className="text-sm font-medium text-gray-700">Asistencia</span>
                   </div>
-                  <span className={`text-sm font-bold ${getProgressTextColor(student.attendancePercentage)}`}>
-                    {student.attendancePercentage}% ({Math.round(student.attendancePercentage * criteria.attendanceDaysMax / 100)}/{criteria.attendanceDaysMax})
+                  <span className={`text-sm font-bold ${getProgressTextColor(Math.round((attendanceRecords.length / criteria.attendanceDaysMax) * 100))}`}>
+                    {Math.round((attendanceRecords.length / criteria.attendanceDaysMax) * 100)}% ({attendanceRecords.length}/{criteria.attendanceDaysMax})
                   </span>
                 </div>
                 <div className="w-full bg-gray-200 rounded-full h-2">
                   <div
                     className={`h-2 rounded-full ${getProgressColor(student.attendancePercentage)}`}
-                    style={{ width: `${student.attendancePercentage}%` }}
+                    style={{ width: `${Math.min(100, Math.round((attendanceRecords.length / criteria.attendanceDaysMax) * 100))}%` }}
                   ></div>
                 </div>
               </div>
