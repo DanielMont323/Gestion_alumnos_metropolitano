@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate, useParams, useLocation, useNavigate } from 'react-router-dom';
 import { AuthProvider, useAuth } from './contexts/AuthContext';
 import Login from './components/Login';
@@ -7,6 +7,7 @@ import ClinicsList from './components/ClinicsList';
 import StudentsList from './components/StudentsList';
 import AddStudentForm from './components/AddStudentForm';
 import AttendanceTracking from './components/AttendanceTracking';
+import StudentAttendanceCalendar from './components/StudentAttendanceCalendar';
 import AttendanceByGroup from './components/AttendanceByGroup';
 import StudentProgress from './components/StudentProgress';
 import AttendanceHistory from './components/AttendanceHistory';
@@ -14,6 +15,7 @@ import StudentEvaluation from './components/StudentEvaluation';
 import EvaluationCriteriaManager from './components/EvaluationCriteriaManager';
 import Reports from './components/Reports';
 import './App.css';
+import { studentsAPI, clinicsAPI } from './services/api';
 
 interface Clinic {
   _id: string;
@@ -38,6 +40,54 @@ const AttendanceHistoryWrapper: React.FC<{ clinicName: string }> = ({ clinicName
       studentName="Alumno" 
       studentGroup="Grupo" 
       clinicName={clinicName} 
+    />
+  );
+};
+
+// Wrapper for StudentAttendanceCalendar with data fetching
+const StudentAttendanceCalendarWrapper: React.FC<{ clinicId: string; clinicName: string }> = ({ clinicId, clinicName }) => {
+  const [students, setStudents] = useState<Array<{ _id: string; name: string; group: string }>>([]);
+  const [clinicGroups, setClinicGroups] = useState<Array<{ name: string; days: string[]; duration: string; activities: number }>>([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    fetchData();
+  }, [clinicId]);
+
+  const fetchData = async () => {
+    try {
+      setIsLoading(true);
+      // Fetch clinic data to get groups
+      const clinicResponse = await clinicsAPI.getById(clinicId);
+      setClinicGroups(clinicResponse.data.groups || []);
+      
+      // Fetch students
+      const studentsResponse = await studentsAPI.getByClinic(clinicId);
+      const studentsData = studentsResponse.data.students || studentsResponse.data;
+      setStudents(studentsData);
+    } catch (err: any) {
+      console.error('Error fetching data:', err);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  if (isLoading) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-slate-50">
+        <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-600"></div>
+      </div>
+    );
+  }
+
+  return (
+    <StudentAttendanceCalendar
+      clinicId={clinicId}
+      clinicName={clinicName}
+      students={students}
+      clinicGroups={clinicGroups}
+      onBack={() => navigate('/students')}
     />
   );
 };
@@ -166,7 +216,7 @@ const AppContent: React.FC = () => {
 
           <Route path="/attendance" element={
             selectedClinic ? (
-              <AttendanceTracking
+              <StudentAttendanceCalendarWrapper
                 clinicId={selectedClinic?._id || ''}
                 clinicName={selectedClinic?.name || ''}
               />
