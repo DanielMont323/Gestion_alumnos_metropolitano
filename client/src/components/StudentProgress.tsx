@@ -291,6 +291,27 @@ const StudentProgress: React.FC<StudentProgressProps> = ({ studentId, clinicName
                 </div>
               </div>
             </div>
+
+            {/* Calificación Final */}
+            <div className="mt-8 bg-gradient-to-r from-blue-500 to-purple-600 rounded-xl p-6 text-white shadow-lg">
+              <div className="flex items-center justify-between">
+                <div>
+                  <h4 className="text-lg font-bold mb-1">Calificación Final</h4>
+                  <p className="text-sm text-blue-100">Promedio de todos los criterios</p>
+                </div>
+                <div className="text-right">
+                  <p className="text-4xl font-bold">
+                    {Math.round((
+                      Math.round((attendanceRecords.length / criteria.attendanceDaysMax) * 100) +
+                      student.performance +
+                      student.presentation +
+                      student.workbookProgress +
+                      Math.min(100, Math.round(student.trainingHours * 100 / criteria.trainingHoursMax))
+                    ) / 5)}%
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>

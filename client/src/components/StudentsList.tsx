@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import { studentsAPI } from '../services/api';
-import { 
-  Search, 
-  Plus, 
-  Eye, 
-  Edit, 
-  Trash2, 
-  ChevronLeft, 
+import { studentsAPI, evaluationCriteriaAPI } from '../services/api';
+import {
+  Search,
+  Plus,
+  Eye,
+  Edit,
+  Trash2,
+  ChevronLeft,
   ChevronRight,
   Settings,
   Printer
@@ -19,7 +19,16 @@ interface Student {
   attendancePercentage: number;
   performance: number;
   presentation: number;
+  workbookProgress: number;
+  trainingHours: number;
   startDate: string;
+  clinic: string;
+}
+
+interface EvaluationCriteria {
+  attendanceDaysMax: number;
+  trainingHoursMax: number;
+  workbookActivitiesMax: number;
 }
 
 interface StudentsListProps {
@@ -46,11 +55,22 @@ const StudentsList: React.FC<StudentsListProps> = ({
   const [selectedGroup, setSelectedGroup] = useState('Todos los grupos');
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
+  const [criteria, setCriteria] = useState<EvaluationCriteria | null>(null);
 
   useEffect(() => {
     console.log('StudentsList useEffect triggered:', { clinicId, currentPage, searchTerm, selectedGroup });
     fetchStudents();
+    fetchCriteria();
   }, [clinicId, currentPage, searchTerm, selectedGroup]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  const fetchCriteria = async () => {
+    try {
+      const response = await evaluationCriteriaAPI.getByClinic(clinicId);
+      setCriteria(response.data);
+    } catch (err) {
+      console.error('Error fetching criteria:', err);
+    }
+  };
 
   const fetchStudents = async () => {
     try {
@@ -114,6 +134,27 @@ const StudentsList: React.FC<StudentsListProps> = ({
     return 'text-red-600';
   };
 
+  const calculateFinalGrade = (student: Student): number => {
+    if (!criteria) return 0;
+
+    // Calcular asistencia real
+    const attendancePercent = student.attendancePercentage || 0;
+
+    // Calcular capacitación
+    const trainingPercent = Math.min(100, Math.round((student.trainingHours || 0) * 100 / criteria.trainingHoursMax));
+
+    // Promedio de los 5 criterios
+    const finalGrade = Math.round((
+      attendancePercent +
+      (student.performance || 0) +
+      (student.presentation || 0) +
+      (student.workbookProgress || 0) +
+      trainingPercent
+    ) / 5);
+
+    return finalGrade;
+  };
+
   const handlePrint = (type: 'clinic' | 'group') => {
     // Get all students for printing (not just current page)
     const fetchAllStudentsForPrint = async () => {
@@ -161,19 +202,11 @@ const StudentsList: React.FC<StudentsListProps> = ({
   };
 
   const generatePrintContent = (title: string, students: Student[]) => {
-    const formatDate = (dateString: string) => {
-      const date = new Date(dateString);
-      return date.toLocaleDateString('es-MX', { day: '2-digit', month: '2-digit', year: 'numeric' });
-    };
-
     const studentsHTML = students.map(student => `
       <tr>
         <td style="padding: 8px; border: 1px solid #ddd;">${student.name}</td>
         <td style="padding: 8px; border: 1px solid #ddd;">${student.group}</td>
-        <td style="padding: 8px; border: 1px solid #ddd;">${student.attendancePercentage}%</td>
-        <td style="padding: 8px; border: 1px solid #ddd;">${student.performance}%</td>
-        <td style="padding: 8px; border: 1px solid #ddd;">${student.presentation}%</td>
-        <td style="padding: 8px; border: 1px solid #ddd;">${formatDate(student.startDate)}</td>
+        <td style="padding: 8px; border: 1px solid #ddd; font-weight: bold;">${calculateFinalGrade(student)}%</td>
       </tr>
     `).join('');
 
@@ -207,10 +240,7 @@ const StudentsList: React.FC<StudentsListProps> = ({
             <tr>
               <th>Nombre</th>
               <th>Grupo</th>
-              <th>Asistencia</th>
-              <th>Desempeño</th>
-              <th>Presentación</th>
-              <th>Fecha de Inicio</th>
+              <th>Calificación Final</th>
             </tr>
           </thead>
           <tbody>
@@ -317,13 +347,7 @@ const StudentsList: React.FC<StudentsListProps> = ({
                   Grupo
                 </th>
                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                  Asistencia %
-                </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                  Desempeño
-                </th>
-                <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                  Presentación
+                  Calificación Final
                 </th>
                 <th className="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                   Acciones
@@ -340,18 +364,8 @@ const StudentsList: React.FC<StudentsListProps> = ({
                     <div className="text-sm text-gray-600">{student.group}</div>
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap">
-                    <div className={`text-sm font-medium ${getPerformanceColor(student.attendancePercentage)}`}>
-                      {student.attendancePercentage}%
-                    </div>
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    <div className={`text-sm font-medium ${getPerformanceColor(student.performance)}`}>
-                      {student.performance}%
-                    </div>
-                  </td>
-                  <td className="px-6 py-4 whitespace-nowrap">
-                    <div className={`text-sm font-medium ${getPerformanceColor(student.presentation)}`}>
-                      {student.presentation}%
+                    <div className={`text-lg font-bold ${getPerformanceColor(calculateFinalGrade(student))}`}>
+                      {calculateFinalGrade(student)}%
                     </div>
                   </td>
                   <td className="px-6 py-4 whitespace-nowrap text-sm font-medium">
